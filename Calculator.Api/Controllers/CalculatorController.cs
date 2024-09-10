@@ -30,9 +30,9 @@ namespace Calculator.Api.Controllers
                     _ => BadRequest("Invalid operation")
                 });
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
 
@@ -41,7 +41,7 @@ namespace Calculator.Api.Controllers
         {
             try {
                 var result = _calculatorService.Factorial(number);
-                return result.ToString();
+                return Ok(result.ToString());
             }
             catch (ArgumentException ex)
             {

@@ -6,7 +6,6 @@ namespace Calculator.Domain.Entities
     {
         [Required]
         public double Number1 { get; set; }
-        [Required]
         public double Number2 { get; set; }
     }
 }
